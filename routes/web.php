@@ -28,4 +28,11 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+Route::controller(\App\Http\Controllers\RegisteredTenantController::class)
+    ->name('tenant.')
+    ->group(function () {
+        Route::get('register', 'register')->name('form');
+        Route::post('register', 'store')->name('register');
+    });
+
 require __DIR__.'/auth.php';
