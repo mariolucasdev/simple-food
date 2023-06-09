@@ -35,4 +35,4 @@ Route::controller(\App\Http\Controllers\RegisteredTenantController::class)
         Route::post('register', 'store')->name('register');
     });
 
-// require __DIR__.'/auth.php';
+require __DIR__.'/auth.php';
